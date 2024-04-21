@@ -45,10 +45,31 @@ class Graph:
             new_site = self.Site(row["sitename"], row["hits"], row["tags"])
             self.insert(new_site)
 
+    def insert_sorted_taglist(list, site) # Insertion sorted by hits
+        inserted = False
+        for i, index in enumerate(list):
+            if site.hits > i.hits:
+                list.insert(index, site)
+                inserted = True
+        if not inserted:
+            list.append(site)
+
+    def insert_sorted_sitelist(list, site, to_insert) # Insertion sorted by tags in common
+        inserted = False
+        for i, index in enumerate(list):
+            insert_tags_in_common = to_insert.tags_in_common(site)
+            i_tags_in_common = i.tags_in_common(site)
+
+            if insert_tags_in_common > i_tags_in_common:
+                list.insert(index, (to_insert, insert_tags_in_common))
+                inserted = True
+            if not inserted:
+                list.append(site)
+
     # Insertion
     def add_to_taglist(self, site):
         for tag in site.tags:
-            self.tag_list[tag].append(site)
+            insert_sorted_taglist(self.tag_list[tag], site)
 
     def add_to_sitelist(self, site):
         if site not in self.site_list.keys:
@@ -57,7 +78,7 @@ class Graph:
         for node in self.site_list.keys:
             common_tags = node.tags_in_common(site)
             if common_tags > 0:
-                self.site_list[node].append((site, common_tags))
+                insert_sorted_sitelist(self.site_list[node], node, site)
 
     def insert(self, site):
         self.add_to_taglist(site)
