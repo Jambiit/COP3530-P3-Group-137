@@ -30,6 +30,9 @@ class Graph:
             else:
                 return False
 
+        def print_site(self):
+            print(f"{self.sitename}: {self.hits} hits, tags: {self.tags}")
+
         def tags_in_common(self, site):
             common_tags = 0
             for i in self.tags:
@@ -70,5 +73,17 @@ class Graph:
 
     def search_by_tag(self, tag): # returns list of nodes
         return self.tag_list[tag]
+
+    def print_adjacent_sites(self, name):
+        site = search_by_name(name)
+        site.print_site()
+        print(f"Showing similar results for {name}:")
+        for i in self.site_list[site]
+            i.print_site()
+
+    def print_taglist_sites(self, tag):
+        print(f"Showing results for tag {tag}:")
+        for i in self.tag_list[tag]:
+            i.print_site()
 
 site_graph = Graph(input_data)
