@@ -45,7 +45,7 @@ class Graph:
             new_site = self.Site(row["sitename"], row["hits"], row["tags"])
             self.insert(new_site)
 
-    def insert_sorted_taglist(list, site) # Insertion sorted by hits
+    def insert_sorted_taglist(list, site): # Insertion sorted by hits
         inserted = False
         for i, index in enumerate(list):
             if site.hits > i.hits:
@@ -54,7 +54,7 @@ class Graph:
         if not inserted:
             list.append(site)
 
-    def insert_sorted_sitelist(list, site, to_insert) # Insertion sorted by tags in common
+    def insert_sorted_sitelist(list, site, to_insert): # Insertion sorted by tags in common
         inserted = False
         for i, index in enumerate(list):
             insert_tags_in_common = to_insert.tags_in_common(site)
@@ -114,7 +114,7 @@ class Graph:
             df.append(new_row, ignore_index=True)
         df.to_csv('out.csv', index=False)
 
-    def get_taglist_csv(self, tag:
+    def get_taglist_csv(self, tag):
         df = pd.DataFrame()
         for i in self.tag_list[tag]:
             new_row = {"sitename": [i.sitename], "hits": [i.hits], "tags": [i.tags]}
