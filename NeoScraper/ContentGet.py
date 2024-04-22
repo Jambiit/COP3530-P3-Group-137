@@ -40,7 +40,7 @@ def process_curls(input_csv, output_csv):
     
     print(f"Data saved to {output_csv}")
 
-# Example usage
+# Running this code independantly for now
 input_csv = "random_ids.csv"
 output_csv = "small_random_info.csv"
 process_curls(input_csv, output_csv)
