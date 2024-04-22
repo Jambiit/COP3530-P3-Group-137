@@ -69,7 +69,7 @@ class Graph:
     # Insertion
     def add_to_taglist(self, site):
         for tag in site.tags:
-            insert_sorted_taglist(self.tag_list[tag], site)
+            self.insert_sorted_taglist(self.tag_list[tag], site)
 
     def add_to_sitelist(self, site):
         if site not in self.site_list.keys:
@@ -78,7 +78,7 @@ class Graph:
         for node in self.site_list.keys:
             common_tags = node.tags_in_common(site)
             if common_tags > 0:
-                insert_sorted_sitelist(self.site_list[node], node, site)
+                self.insert_sorted_sitelist(self.site_list[node], node, site)
 
     def insert(self, site):
         self.add_to_taglist(site)
@@ -96,10 +96,10 @@ class Graph:
         return self.tag_list[tag]
 
     def print_adjacent_sites(self, name):
-        site = search_by_name(name)
+        site = self.search_by_name(name)
         site.print_site()
         print(f"Showing similar results for {name}:")
-        for i in self.site_list[site]
+        for i in self.site_list[site]:
             i.print_site()
 
     def print_taglist_sites(self, tag):
