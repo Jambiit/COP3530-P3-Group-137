@@ -107,4 +107,18 @@ class Graph:
         for i in self.tag_list[tag]:
             i.print_site()
 
+    def get_sitelist_csv(self, site):
+        df = pd.DataFrame({"sitename": [site.sitename], "hits": [site.hits], "tags": [site.tags]})
+        for i in self.site_list[site]:
+            new_row = {"sitename": [i.sitename], "hits": [i.hits], "tags": [i.tags]}
+            df.append(new_row, ignore_index=True)
+        df.to_csv('out.csv', index=False)
+
+    def get_taglist_csv(self, tag:
+        df = pd.DataFrame()
+        for i in self.tag_list[tag]:
+            new_row = {"sitename": [i.sitename], "hits": [i.hits], "tags": [i.tags]}
+            df.append(new_row, ignore_index=True)
+        df.to_csv('out.csv', index=False)
+
 site_graph = Graph(input_data)
