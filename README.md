@@ -11,7 +11,7 @@ To do this we implemented an interactive search bar that allows users to search 
 
 ## How To Access and Use The Search System
 
-You can find the website on Neocities at: [ufdsaproject3.neocities.org]ufdsaproject3.neocities.org
+You can find the website on Neocities at: [ufdsaproject3.neocities.org](ufdsaproject3.neocities.org)
 
 There is also a tutorial video on how to use the search system at: https://youtu.be/g14tC7oO35g
 
