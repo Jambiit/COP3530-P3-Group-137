@@ -43,8 +43,8 @@ The data is then transformed into a pandas dataframe and written out to a csv fi
 
 ## How was this Data Retrieved in the First Place?
 
-We developed a list of 100,000 Neocities websites using Neocities’ built in developer API support and a data scraper that can obtain the necessary data to develop our data structure. All websites were pulled from https://neocities.org/browse.
+We developed a list of 100,000 Neocities websites using Neocities’ built in developer API support and a data scraper that can obtain the necessary data to develop our data structure appropriately named Neoscraper. All websites were pulled from https://neocities.org/browse.
 
-[Web Scraper Info]
+The NeoScraper consists of two main programs. NeoScraper.py collects the IDs of websites and coverts them into cURL addresses. ContentGet takes these converted IDs and uses them to access the JSON files of every website. This obtained information is stored in a CSV file to be moved and processed in our data structures.
 
 
