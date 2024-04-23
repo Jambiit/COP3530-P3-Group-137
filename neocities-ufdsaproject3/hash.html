@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA!!!</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  <img src="/Logo.png">
+    <h1>Hashmap searching</h1>
+    <label for="searchInput">Enter Text to Search:</label>
+    <input type="text" id="searchInput" placeholder="Input a website name(author) to start at!" style="width: 300px;">
+    <button onclick="searchCSV()">Search</button>
+    <div id="searchText"></div>
+    <div id="searchResults"></div>
+    
+
+    <script>
+    function processAndDisplay(row) {
+        const [title, websitesString] = row.split(',');
+        const trimmedTitle = title.trim();
+        const websites = JSON.parse(websitesString);
+    
+        // Construct processed row with plain text list of websites
+        const processedRow = "testt";
+    
+        return processedRow;
+    }
+
+function searchCSV() {
+    var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+    var searchResults = document.getElementById("searchResults");
+    var flavorText = document.getElementById("searchText");
+
+    // Clear previous search results
+    searchResults.innerHTML = "";
+
+    // Read the CSV file
+    fetch("smalldata_sitelist.csv")
+    .then(response => response.text())
+    .then(data => {
+        // Split CSV data into rows
+        var rows = data.split('\n');
+        
+        // Search for the input text in the first column of each row
+        var found = false;
+        for (var i = 0; i < rows.length; i++) {
+            var cols = rows[i].split(',');
+            var firstColumn = cols[0].trim().toLowerCase();
+            
+            if (firstColumn === searchText) {
+                // Process and display the row if the input text is found
+                flavorText.innerHTML = "<p>We found " + '<a href="https://' + website + '.neocities.org" target="_blank">' + website + '</a>' + "!</p>";
+                var processedRow = processeAndDisplay(rows[i]);
+                searchResults.innerHTML = processedRow;
+                found = true;
+                break;
+            }
+        }
+
+        // If input text is not found, display a message
+        if (!found) {
+            searchResults.innerText = "No matching results found.";
+        }
+    })
+    .catch(error => console.error('Error reading CSV:', error));
+}
+
+    </script>
+
+    
+    
+
+
+
+    
+  </body>
+</html>

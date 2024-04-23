@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA!!!</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  <img src="/Logo.png">
+    <h1>Graph searching</h1>
+    <p> How will you be searching today? </p>
+  <form>
+    <input type="radio" id="option1" name="radioGroup" value="option1" checked>
+    <label for="option1">By website</label><br>
+  
+    <input type="radio" id="option2" name="radioGroup" value="option2">
+    <label for="option2">By tag</label><br>
+
+  </form>
+    <label for="searchInput">Enter Text to Search:</label>
+    <input type="text" id="searchInput"  style="width: 300px;">
+    <button onclick="optionSelect()">Search</button>
+    <div id="searchText"></div>
+    <div id="searchLink"></div>
+    <div id="searchResults"></div>
+    
+
+    <script src="displaySearch.js" defer>
+    </script>
+
+    
+    
+
+
+
+    
+  </body>
+</html>
