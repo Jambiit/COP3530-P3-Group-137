@@ -1,5 +1,4 @@
 import pandas as pd
-import re
 
 input_data = pd.read_csv("full_info.csv")
 
@@ -57,24 +56,9 @@ class Graph:
             self.site_list[new_site] = []
             self.add_to_taglist(new_site)
             print(index)
-        for site in self.site_list:
+        for index, site in enumerate(self.site_list):
+            print(index)
             self.add_to_sitelist(site)
-
-    def insert_sorted_sitelist(self, site, to_insert):  # Insertion sorted by tags in common
-        insert_tags_in_common = to_insert.tags_in_common(site)
-        if not self.site_list[site]:
-            self.site_list[site] = [to_insert]
-
-        inserted = False
-        for index, i in enumerate(self.site_list[site]):
-            i_tags_in_common = i.tags_in_common(site)
-
-            if insert_tags_in_common > i_tags_in_common:
-                self.site_list[site].insert(index, to_insert)
-                inserted = True
-                break
-        if not inserted:
-            self.site_list[site].append(to_insert)
 
     # Insertion
     def add_to_taglist(self, site):
@@ -120,10 +104,15 @@ class Graph:
         sites = []
         adjacent_list = []
         for site in self.site_list:
+            print(str(site))
             sites.append(site.sitename)
             adjacent_sites = []
+            count = 0
             for i in self.site_list[site]:
                 adjacent_sites.append(str(i))
+                count += 1
+                if count > 10:
+                    break
             adjacent_list.append(str(adjacent_sites))
         df["site"] = sites
         df["adjacent"] = adjacent_list
