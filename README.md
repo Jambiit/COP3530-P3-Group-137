@@ -1,7 +1,7 @@
 <H1> This is the Neocities search system! </h1>
 COP3530 - Project 3
-\\
-\\
+
+<br/><br/>
 
 ## Information and Motivation Behind This Project
 
