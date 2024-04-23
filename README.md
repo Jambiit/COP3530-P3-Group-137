@@ -23,13 +23,13 @@ You may search by the name of an existing Neocities website to find similar webs
 
 The Neocities site data is processed and structured in an adjacency list as follows:
 
-A site_list will be created as a way of creating a connection between sites with similar tags
+A site_list will be created as a way of creating a connection between sites with similar tags:
 
-{site: [site, site, site]}
+# {site: [site, site, site]}
 
-A second tag_list will be created as a way of referencing all sites under a certain tag
+A second tag_list will be created as a way of referencing all sites under a certain tag:
 
-{tag: [site, site, site]}
+# {tag: [site, site, site]}
 
 The data is then transformed into a pandas dataframe and written out to a csv file for use in the Neocities search system!
 
