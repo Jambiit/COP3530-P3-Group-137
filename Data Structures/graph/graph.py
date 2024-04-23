@@ -9,11 +9,9 @@ df = pd.DataFrame(input_data)
 #
 # Each site has list of adjacent sites and a value representing the # of tags shared
 #   {site: [(site, 1), (site, 2), (site, 3)]}
-# The list will be sorted by hits, each adjacent list will be sorted by # of shared tags
 #
 # A second tag_list will be created as a way of referencing all sites under a certain tag
 #   {tag: [site, site, site]}
-# Each list will be sorted by hits
 
 class Graph:
     site_list = {}
