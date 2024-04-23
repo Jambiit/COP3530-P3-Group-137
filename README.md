@@ -43,6 +43,8 @@ The data is then transformed into a pandas dataframe and written out to a csv fi
 
 ## How was this Data Retrieved in the First Place?
 
+We developed a list of 100,000 Neocities websites using Neocities’ built in developer API support and a data scraper that can obtain the necessary data to develop our data structure. All websites were pulled from https://neocities.org/browse.
+
 [Web Scraper Info]
 
 
