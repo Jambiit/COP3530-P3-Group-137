@@ -16,4 +16,8 @@ There is also a tutorial video on how to use the search system at: https://youtu
 Upon clicking the link you will be brought to the main page of the site where you are given the option to choose a data structure. After clicking a structure you are then prompted to insert a keyword to search.
 You may search by the name of an existing Neocities website to find similar websites, or you can search by tag to find all websites of that category!
 
+#### How is the Data Stored?
+
+The Neocities site data is processed and stored in an adjacency list structure where each website is linked to a list of sites with similar tags
+
 
