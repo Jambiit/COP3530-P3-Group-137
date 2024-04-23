@@ -11,6 +11,7 @@ We find this an issue because one of the main appeals of Neocities is website di
 
 To do this we implemented an interactive search bar that allows users to search by name and by tags. The search bar is able to provide suggestions of similar sites based on the tag system included in the data.
 
+<br/><br/>
 
 ## How To Access and Use The Search System
 
@@ -22,6 +23,7 @@ You may search by the name of an existing Neocities website to find similar webs
 
 There is also a tutorial video on how to use the search system at: [https://youtu.be/g14tC7oO35g](https://youtu.be/g14tC7oO35g)
 
+<br/><br/>
 
 ## How is the Data Stored?
 
@@ -37,6 +39,7 @@ A second tag_list will be created as a way of referencing all sites under a cert
 
 The data is then transformed into a pandas dataframe and written out to a csv file for use in the Neocities search system!
 
+<br/><br/>
 
 ## How was this Data Retrieved in the First Place?
 
