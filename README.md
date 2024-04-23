@@ -2,6 +2,11 @@
 COP3530 - Project 3
 
 
+
+
+
+
+
 ## Information and Motivation Behind This Project
 
 Neocities is a web hosting service dedicated to reviving and preserving the era of independent web publishing. As of the end of 2023, Neocities is home to over 700,000 websites. Despite the immense number of websites created and developed by users of Neocities, many of these websites are virtually inaccessible due to the way that the Neocities search engine works.
